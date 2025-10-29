@@ -1,4 +1,9 @@
 "use client";
+import forbes from "@/app/images/forbes.svg";
+import trojmiasto from "@/app/images/trojmiasto.png";
+import esopot from "@/app/images/esopot.png";
+import choragiew from "@/app/images/gdansk.png"; // jeśli masz taki plik
+import gdansk from "@/app/images/gdańsk.png";
 
 import {
   Box,
@@ -11,90 +16,96 @@ import {
   Button,
   Text,
   Checkbox,
-  useColorModeValue,
 } from "@chakra-ui/react";
 
 export const PressNewsletterSection = () => {
   const purple = "#5626C4";
 
+  const logos = [forbes, trojmiasto, esopot, choragiew, gdansk].filter(Boolean);
+
   return (
-    <Box bg="gray.50" py={16} px={6}>
-      <VStack spacing={12} maxW="6xl" mx="auto">
-        {/* 🔹 Logo mediów */}
-        <VStack spacing={6}>
-          <Heading
-            as="h2"
-            size="md"
-            textAlign="center"
-            color="gray.800"
-            fontWeight="medium"
-          >
-            Napisali o nas coś miłego
-          </Heading>
+    <Box bg="#F7FAFC" /* delikatny jasny szary jak na screenie */ py={16} px={6}>
+      <VStack spacing={10} maxW="1100px" mx="auto">
+        {/* Tytuł */}
+        <Heading
+          as="h2"
+          fontSize="24px"
+          fontWeight="semibold"
+          color="gray.800"
+          textAlign="center"
+        >
+          Napisali o nas coś miłego
+        </Heading>
 
-          <HStack
-            justify="center"
-            spacing={{ base: 6, md: 12 }}
-            flexWrap="wrap"
-          >
-            {[
-              "/images/forbes.png",
-              "/images/trojmiasto.png",
-              "/images/sopot.png",
-              "/images/gdansk.png",
-            ].map((logo, i) => (
-              <Image
-                key={i}
-                src={logo}
-                alt={`media-logo-${i}`}
-                h="30px"
-                objectFit="contain"
-                filter="grayscale(100%)"
-                opacity={0.8}
-              />
-            ))}
-          </HStack>
-        </VStack>
+        {/* Logotypy */}
+        <HStack
+          spacing={14}
+          justify="center"
+          align="center"
+          w="full"
+          flexWrap="wrap"
+        >
+          {logos.map((logo, i) => (
+            <Image
+              key={i}
+              src={logo.src}
+              alt={`media-logo-${i}`}
+              h="34px"
+              objectFit="contain"
+              filter="grayscale(100%)"
+              opacity={0.9}
+            />
+          ))}
+        </HStack>
 
-        {/* 🔹 Sekcja newslettera */}
+        {/* Karta newslettera */}
         <Flex
           direction="column"
-          align="flex-start"
-          bg="white"
-          boxShadow="md"
-          borderRadius="xl"
-          p={6}
           w="full"
-          maxW="lg"
-          mx="auto"
+          maxW="840px"
+          bg="white"
+          borderRadius="14px"
+          boxShadow="0 12px 34px rgba(0,0,0,0.08)"
+          p="22px"
           gap={4}
         >
-          <Heading as="h3" size="sm" color="gray.800" mb={2}>
+          <Heading
+            as="h3"
+            fontSize="16px"
+            fontWeight="semibold"
+            color="gray.800"
+          >
             Chcesz otrzymywać od nas informacje o nowych opiekunach?
           </Heading>
 
-          <Flex w="full" gap={2}>
+          <HStack w="full" spacing={3}>
             <Input
               placeholder="Twój adres e-mail"
-              bg="gray.50"
+              bg="white"
               borderColor="gray.200"
-              _focus={{ borderColor: purple }}
+              _focus={{ borderColor: purple, boxShadow: `0 0 0 1px ${purple}` }}
+              h="48px"
+              borderRadius="9999px"
+              px={5}
             />
             <Button
               bg={purple}
               color="white"
               _hover={{ bg: "#451FA3" }}
-              px={6}
+              h="48px"
+              px={7}
+              borderRadius="9999px"
+              fontWeight="bold"
             >
               Zapisz się
             </Button>
-          </Flex>
+          </HStack>
 
           <Checkbox size="sm" colorScheme="purple">
             Zapisz się do newslettera
           </Checkbox>
 
-          <Text fontSize="xs" color="gray.500">
+          <Text fontSize="12px" color="gray.600" lineHeight="1.5">
             Zapisując się wyrażasz zgodę na otrzymywanie wiadomości e-mail od
             Zoocial. Możesz wypisać się w każdej chwili.
           </Text>

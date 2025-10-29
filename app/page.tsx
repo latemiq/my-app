@@ -6,6 +6,8 @@ import { InstagramSection } from "../components/InstagramSection";
 import { TrustSection } from "../components/TrustSection";
 import { PressNewsletterSection } from "@/components/PressNewsletterSection";
 import { Footer } from "../components/Footer";
+import theme from "@/theme/theme";
+
 
 export default function App() {
   return (
@@ -19,5 +21,7 @@ export default function App() {
        < Footer />
       {/* reszta strony */}
     </ChakraProvider>
+    
   );
+  
 }
