@@ -113,7 +113,7 @@ export const PethomerSection = () => {
                 src={item.img}
                 alt={item.title}
                 w="100%"
-                h="180px"           // trochę większe niż 160px – jak na screenie
+                h="180px"           
                 objectFit="cover"
               />
               <Box p={4}>
