@@ -2,7 +2,7 @@
 import forbes from "@/app/images/forbes.svg";
 import trojmiasto from "@/app/images/trojmiasto.png";
 import esopot from "@/app/images/esopot.png";
-import choragiew from "@/app/images/gdansk.png"; // jeśli masz taki plik
+import choragiew from "@/app/images/gdansk.png"; 
 import gdansk from "@/app/images/gdańsk.png";
 
 import {
@@ -24,7 +24,7 @@ export const PressNewsletterSection = () => {
   const logos = [forbes, trojmiasto, esopot, choragiew, gdansk].filter(Boolean);
 
   return (
-    <Box bg="#F7FAFC" /* delikatny jasny szary jak na screenie */ py={16} px={6}>
+    <Box bg="#F7FAFC" py={16} px={6}>
       <VStack spacing={10} maxW="1100px" mx="auto">
         {/* Tytuł */}
         <Heading
